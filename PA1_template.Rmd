@@ -23,8 +23,8 @@ data1mean <- mean(data1$steps)
 data1median <- median(data1$steps)
 
 ```
-The mean is `data1mean`.
-The median is `data1median`.
+The mean is `r data1mean`.
+The median is `r data1median`.
 
 ## What is the average daily activity pattern?
 Calculate the average daily activity pattern and plot a time series of it.
@@ -38,7 +38,7 @@ plot(data2$interval, data2$steps, type = "l", xlab = "Interval", ylab = "Number 
 maxint <- data2[which.max(data2$steps), 1]
 
 ```
-The interval is: `maxint`.
+The interval is: `r maxint`.
 
 ## Imputing missing values
 Calculate and report the total number of missing values in the dataset. Create a new dataset that is equal to the original dataset but with the missing data filled in. This is made using the 5min interval mean to replace the missing values.
@@ -48,7 +48,7 @@ Make a histogram of the total number of steps taken each day and a histogram of 
 mv <- sum(is.na(data$steps))
 
 ```
-The missing values are: `mv`.
+The missing values are: `r mv`.
 ```{r}
 data2 <- data
 nas <- is.na(data2$steps)
@@ -66,8 +66,9 @@ hist(totstep2$steps, lwd = 10, col = "yellow", ylim = c(0,40), xlab = "Number of
 data2mean <- mean(totstep2$steps)
 data2median <- median(totstep2$steps)
 ```
-The fixed mean is:`data2mean`.
-The fixed median is:`data2median`.
+The fixed mean is:`r data2mean`.
+The fixed median is:`r data2median`.
+
 ## Are there differences in activity patterns between weekdays and weekends?
 Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day. Make a panel plot containing a time series plot.
 
