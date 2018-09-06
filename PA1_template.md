@@ -3,9 +3,13 @@
 ---
 
 ## Loading and preprocessing the data
-After that the **activity.zip** file is extract in a new folder called **"repdata_data_activity"** in the working directory, load the data and see the structure.
+If not downloaded, download the zip file. Unzip the getdata-projectfiles-UCI HAR Dataset.zip file, read the activity.csv file and see the structure.
 ```{r}
-data <- read.csv("~/repdata_data_activity/activity.csv")
+if(!file.exists("getdata-projectfiles-UCI HAR Dataset.zip")) {
+         download.file("http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip", destfile = "getdata-projectfiles-UCI HAR Dataset.zip")
+     }
+unzip("getdata-projectfiles-UCI HAR Dataset.zip")
+data <- read.csv("activity.csv")
 str(data)
 ```
 
